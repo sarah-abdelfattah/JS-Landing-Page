@@ -37,6 +37,7 @@ const buildNavBar = function () {
 
         fragment.appendChild(newSectionLi);
     }
+    
     myNavBar.appendChild(fragment);
 }
 //FINISHED building the NavBar
@@ -161,9 +162,13 @@ myNavBar.addEventListener('click', function (evt) {
     event.preventDefault();
 
     //a-link was clicked
-    if (evt.target.nodeName.toLowerCase() === 'a') {
-        scrollToSection(evt.target.getAttribute('href'));
-        return;
+    if (evt.target.nodeName.toLowerCase() === 'a' ) {
+        console.log(evt.target.getAttribute('href'));
+
+        if(!(evt.target.getAttribute('href') === '#burger')){
+            scrollToSection(evt.target.getAttribute('href'));
+            return;
+        }
     }
 
     if (evt.target.nodeName.toLowerCase() === 'li') {
@@ -201,3 +206,21 @@ window.addEventListener('scroll', function () {
 });
 
 buildNavBar();
+
+
+// toggling the menubar
+const toggle = document.querySelector(".toggle");
+const menu = document.querySelector(".menu");
+
+/* Toggle mobile menu */
+function toggleMenu() {
+    if (menu.classList.contains("active")) {
+        menu.classList.remove("active");
+    } else {
+        menu.classList.add("active");
+    }
+}
+
+/* Event Listener */
+toggle.addEventListener("click", toggleMenu, false);
+

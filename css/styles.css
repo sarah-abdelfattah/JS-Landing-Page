@@ -62,66 +62,64 @@ nav {
     font-family: "Oxygen", Sans-Serif;
     list-style-type: none;
     text-align: center;
-   
     background: #fff;
-  }
+}
   
-  a {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .logo {
+.logo {
     color: #000;
     font-size: 20px;
     font-family: "Oxygen", Sans-Serif;
-    padding: 10px 20px 0 0;
+    padding: 10px 0px;
     list-style-type: none;
     text-align: center;
-  }
+}
   
-  .item:not(.button) a:hover,
-  .item a:hover::after {
+.item:not(.button) a:hover, .item a:hover::after {
     color: white;
-  }
+}
   
-  .navbar__menu .menu__link:hover {
+.navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
   }
   
-  .your-active-link {
+.your-active-link {
     color: #fff;
     background: rgb(97, 97, 97);
-  }
+}
   
-  /* Mobile menu */
-  .menu li a {
-    display: block;
-    padding: 15px 5px;
-  }
+/* Mobile menu */
 
-  .item {
-    order: 3;
-    width: 100%;
-    text-align: center;
+#navbar__list {
+    margin: 0%;
+    padding: 0%;
+}
+
+.menu li a {
+    display: inline-block;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.item {
     display: none;
-  }
+}
   
-  .active .item {
+.active .item {
     display: block;
-  }
+}
   
-  .toggle {
+.toggle {
     color: wheat;
     background: wheat;
     list-style-type: none;
     text-align: center;
-  }
+}
   
-  /* Desktop menu */
-  @media all and (min-width: 800px) {
+/* Desktop menu */
+@media all and (min-width: 800px) {
     .menu{
         height: fit-content;
     }
@@ -131,6 +129,7 @@ nav {
       justify-content: flex-end;
       background: #fff;
       margin: 0;
+      
     }
   
     .item {
@@ -141,7 +140,7 @@ nav {
     }
   
     .add__section {
-      padding: 1.5%;
+      padding: 1%;
       position: fixed;
       left: 0;
     }
@@ -149,7 +148,7 @@ nav {
     .toggle {
       display: none;
     }
-  }
+}
 
 
 /* Footer Styles */
