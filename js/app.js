@@ -12,7 +12,7 @@ const buildNavBar = function () {
     const fragment = document.createDocumentFragment();
 
     const addSectionLi = document.createElement('li');
-    addSectionLi.classList.add('add__section', 'menu__link');
+    addSectionLi.classList.add('add__section', 'menu__link', 'logo');
     addSectionLi.innerText = 'Add section';
 
     fragment.appendChild(addSectionLi);
@@ -25,7 +25,7 @@ const buildNavBar = function () {
 
         //add id and classes
         newSectionLi.id = sectionId;
-        newSectionLi.classList.add('menu__link');
+        newSectionLi.classList.add('menu__link', 'item');
 
         //create link
         const link = document.createElement('a');
@@ -143,7 +143,7 @@ const addNewSection = function () {
 
     //add id and classes
     newSectionLi.id = sectionId;
-    newSectionLi.classList.add('menu__link');
+    newSectionLi.classList.add('menu__link', 'item');
 
     //create link
     const link = document.createElement('a');
@@ -184,6 +184,7 @@ window.addEventListener('scroll', function () {
     const allLinks = document.querySelectorAll('.navbar__menu li a');
     allLinks.forEach((link) => {
         sectionId = link.hash;
+        if(!(sectionId === 'burger')){
         let sections = document.querySelector(sectionId);
 
         // did not reach to any yet
@@ -195,6 +196,7 @@ window.addEventListener('scroll', function () {
         if (sections.offsetTop <= position + 200) {
             activeSection(sections);
         }
+    }
     });
 });
 

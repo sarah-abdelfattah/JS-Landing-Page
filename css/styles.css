@@ -2,7 +2,6 @@
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
-    margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
 }
@@ -51,56 +50,107 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar__menu ul {
-    padding-left: 0;
-    margin: 0;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    text-align: center;
-}
-
-.navbar__menu li {
-    width: 100px;
-}
-
-.navbar__menu li a{
-    color: #000;
-    text-decoration: none;
-}
-
-.add__section {
-    position: fixed;
-    left: 0;
-}
-
-.navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-}
-
-.navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
-    transition: ease 0.3s all;
-}
-
-.your-active-link {
-    color: #fff;
-    background: rgb(97, 97, 97);
-}
-
-/* Header Styles */
-.page__header {
-    background: #fff;
+.page__header{
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 5;
 }
+
+nav {
+    font-family: "Oxygen", Sans-Serif;
+    list-style-type: none;
+    text-align: center;
+   
+    background: #fff;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .logo {
+    color: #000;
+    font-size: 20px;
+    font-family: "Oxygen", Sans-Serif;
+    padding: 10px 20px 0 0;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .item:not(.button) a:hover,
+  .item a:hover::after {
+    color: white;
+  }
+  
+  .navbar__menu .menu__link:hover {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+  }
+  
+  .your-active-link {
+    color: #fff;
+    background: rgb(97, 97, 97);
+  }
+  
+  /* Mobile menu */
+  .menu li a {
+    display: block;
+    padding: 15px 5px;
+  }
+
+  .item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  
+  .active .item {
+    display: block;
+  }
+  
+  .toggle {
+    color: wheat;
+    background: wheat;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  /* Desktop menu */
+  @media all and (min-width: 800px) {
+    .menu{
+        height: fit-content;
+    }
+
+    .navbar__menu ul {
+      display: flex;
+      justify-content: flex-end;
+      background: #fff;
+      margin: 0;
+    }
+  
+    .item {
+      order: 1;
+      position: relative;
+      display: block;
+      width: 130px;
+    }
+  
+    .add__section {
+      padding: 1.5%;
+      position: fixed;
+      left: 0;
+    }
+    
+    .toggle {
+      display: none;
+    }
+  }
+
 
 /* Footer Styles */
 .page__footer {
